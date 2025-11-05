@@ -162,20 +162,20 @@ const Projects = () => {
     {
       img: preview1,
       title: "Winkr App",
-      desc: "Modern dating app landing page built with React and Framer Motion. Optimized for conversions, engagement, and aesthetic balance.",
-      link: "#",
+      desc: "A modern dating application built with Next.js (for performance and SEO), React.js, and a secure Flask backend, engineered for maximum user engagement and conversion rates while ensuring enterprise-grade security",
+      link: "https://www.winkr.live/",
     },
     {
       img: preview2,
       title: "WearBefore Store",
-      desc: "E-commerce platform for sustainable fashion. Features Stripe payments, product management, and admin dashboard built with MERN stack.",
-      link: "#",
+      desc: "Built a responsive landing page for WearBefore, a fashion-tech startup offering AI-based outfit visualization. The page showcases their key feature — real-time virtual try-ons — with smooth animations, an intuitive layout, and optimized performance across devices.",
+      link: "https://www.wearbefore.com/",
     },
     {
       img: preview3,
-      title: "Chaabi CRM",
-      desc: "Custom CRM system for service-based businesses with automated leads, analytics, and cloud-based authentication.",
-      link: "#",
+      title: "Chaabi",
+      desc: "Developed the website Chaabi, a smart access platform a platform that modernizes how people manage keys and access control. Focused on responsive design, clean UI, and seamless user interactions to reflect the brand’s innovation and reliability.",
+      link: "https://webiste-client-pkhh.vercel.app/",
     },
   ];
 
