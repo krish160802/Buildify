@@ -277,7 +277,7 @@ const Roadmap = () => {
           <RoadMapItem
             addToRef={addToRefs}
             title="AI Bot Development & Integration"
-            subText="Build a CRM tailored to a business’s workflow."
+            subText="Automate customer interactions and streamline workflows with intelligent bots."
           />
         </Items>
       </Container>

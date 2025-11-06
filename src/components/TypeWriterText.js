@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Typewriter from "typewriter-effect";
-import Button from "./Button";
 
 const Title = styled.h2`
   font-size: ${(props) => props.theme.fontxxl};
@@ -19,30 +18,30 @@ const Title = styled.h2`
 
   .website {
     position: relative;
-    color: #00fff0;
+    color: #8b4f09ff;
     animation: glitch 1.5s infinite;
   }
 
   @keyframes glitch {
     0% {
-      text-shadow: 2px 2px #eba8daff, -2px -2px #00fff0;
+      text-shadow: 2px 2px #ebc6a8ff, -2px -2px #ff6600ff;
     }
     25% {
-      text-shadow: -2px -2px #f0a0dcff, 2px 2px #00fff0;
+      text-shadow: -2px -2px #f0c0a0ff, 2px 2px #ff5e00ff;
     }
     50% {
-      text-shadow: 2px -2px #d48fc3ff, -2px 2px #00fff0;
+      text-shadow: 2px -2px #d4a88fff, -2px 2px #ff3c00ff;
     }
     75% {
-      text-shadow: -2px 2px #d895c7ff, 2px -2px #00fff0;
+      text-shadow: -2px 2px #d8bd95ff, 2px -2px #ff7b00ff;
     }
     100% {
-      text-shadow: 2px 2px #f1aae0ff, -2px -2px #00fff0;
+      text-shadow: 2px 2px #f1c6aaff, -2px -2px #ff7300ff;
     }
   }
 
   .text-1 {
-    color: red;
+    color: Blue;
   }
   .text-2 {
     color: purple;

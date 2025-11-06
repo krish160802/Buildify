@@ -108,6 +108,7 @@ const Form = styled.form`
       transform: scale(0.95);
       background-color: ${(props) => props.theme.text};
       color: ${(props) => props.theme.body};
+      box-shadow: 0 0 10px ${(props) => props.theme.body};
     }
 
     @media (max-width: 48em) {
@@ -153,6 +154,42 @@ const CheckboxGroup = styled.div`
   }
 `;
 
+/* ✅ New success message style */
+const SuccessMessage = styled.div`
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+  animation: fadeSlide 0.6s ease forwards;
+  max-width: 90%;
+  z-index: 5;
+
+  @keyframes fadeSlide {
+    from {
+      opacity: 0;
+      transform: translate(-50%, 40px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  @media (max-width: 48em) {
+    bottom: 1.5rem;
+    font-size: ${(props) => props.theme.fontsm};
+    padding: 0.8rem 1.5rem;
+  }
+`;
+
+
 const Banner = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -161,6 +198,8 @@ const Banner = () => {
     source: "",
     services: [],
   });
+
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -179,14 +218,19 @@ const Banner = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
-    alert("Thank you! We'll get back to you soon 😊");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      source: "",
-      services: [],
-    });
+    setSubmitted(true);
+
+    // Reset the form after a short delay
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        source: "",
+        services: [],
+      });
+    }, 4000);
   };
 
   return (
@@ -275,8 +319,8 @@ const Banner = () => {
           <label>
             <input
               type="checkbox"
-              value="API Development & Integration"
-              checked={formData.services.includes("API Development & Integration")}
+              value="Custom CRM Development"
+              checked={formData.services.includes("Custom CRM Development")}
               onChange={handleCheckbox}
             />
             Custom CRM Development
@@ -285,6 +329,12 @@ const Banner = () => {
 
         <button type="submit">Submit</button>
       </Form>
+
+      {submitted && (
+        <SuccessMessage>
+          ✅ Thank you! We’ve received your message and will get back to you soon.
+        </SuccessMessage>
+      )}
     </Section>
   );
 };

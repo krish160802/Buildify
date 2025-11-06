@@ -169,7 +169,7 @@ const About = () => {
 
         <ButtonContainer>
           <ThemeProvider theme={dark}>
-            <Button text="START YOUR PROJECT" link="#contact" />
+            <Button text="START YOUR PROJECT" link="#connect" />
           </ThemeProvider>
         </ButtonContainer>
       </Box>

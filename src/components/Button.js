@@ -38,13 +38,20 @@ const Btn = styled.button`
 `;
 
 const Button = ({ text, link }) => {
-  return (
-    <Btn>
-      <a href={link} aria-label={text} target="_blank" rel="noreferrer">
-        {text}
-      </a>
-    </Btn>
-  );
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (link.startsWith("#")) {
+      const target = document.querySelector(link);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      
+      window.open(link, "_blank", "noopener,noreferrer");
+    }
+  };
+
+  return <Btn onClick={handleClick}>{text}</Btn>;
 };
 
 export default Button;

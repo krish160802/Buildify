@@ -80,26 +80,21 @@ const Carousel = () => {
     {
       quote:
         "An absolute pleasure to work with! The website design was sleek, fast, and beyond our expectations.",
-      author: "— Aarav Mehta",
-      role: "Founder, UrbanTech Studio",
+      author: "— Ankur Raheja",
+      role: "Founder, WearBefore",
     },
     {
       quote:
         "They delivered exactly what we needed, on time and with a perfect user experience. Highly recommended!",
-      author: "— Sarah Gupta",
-      role: "Marketing Lead, Bloomify",
+      author: "— Chirag Bansal",
+      role: "Founder, Winkr",
     },
-    {
-      quote:
-        "Professional, responsive, and detail-oriented. Our custom CRM now saves hours of manual work every week.",
-      author: "— Vikram Singh",
-      role: "CEO, FinGrow",
-    },
+    
     {
       quote:
         "Great communication throughout the project and beautiful modern design. Would love to collaborate again!",
       author: "— Neha Patel",
-      role: "Creative Director, PixelEdge",
+      role: "Creative Director, Chaabi",
     },
   ];
   return (
