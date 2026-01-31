@@ -63,16 +63,16 @@ const Form = styled.form`
   grid-gap: 1rem;
 
   @media (max-width: 64em) {
-    width: 80%;
-  }
-
-  @media (max-width: 48em) {
-    width: 100%;
-    grid-template-columns: 1fr;
-  }
+  width: 100%;
+  grid-template-columns: 1fr;
+  padding: 0 0.5rem;
+}
 
   input,
   select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     padding: 0.8rem 1rem;
     border-radius: 10px;
     border: 1px solid ${(props) => props.theme.body};
@@ -149,6 +149,10 @@ const CheckboxGroup = styled.div`
     color: ${(props) => props.theme.text};
   }
 
+  @media (max-width: 64em) {
+    grid-column: span 1;
+  }
+
   @media (max-width: 48em) {
     padding: 1rem;
   }
@@ -215,23 +219,39 @@ const Banner = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Data Submitted:", formData);
-    setSubmitted(true);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    // Reset the form after a short delay
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        source: "",
-        services: [],
-      });
-    }, 4000);
-  };
+  try {
+    const res = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          source: "",
+          services: [],
+        });
+      }, 4000);
+    } else {
+      alert("Failed to send email");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Server error");
+  }
+};
+
 
   return (
     <Section id="connect">

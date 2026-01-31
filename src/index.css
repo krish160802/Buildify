@@ -1,4 +1,15 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 body,
 html {
   overflow-x: hidden;
+}
+
+body {
+  padding-top: 80px; /* match navHeight */
 }
