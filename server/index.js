@@ -41,6 +41,25 @@ app.post("/contact", async (req, res) => {
       `,
     });
 
+    await resend.emails.send({
+      from: "Buildify <onboarding@resend.dev>",
+      to: email,
+      subject: "We’ve received your request 🚀",
+      html: `
+        <p>Hi ${name},</p>
+
+        <p>Thank you for reaching out to <b>Buildify</b>.</p>
+
+        <p>We’ve received your request and our team will get back to you shortly with the best possible solution.</p>
+
+        <p><b>What you asked for:</b><br/>
+        ${services?.join(", ") || "General enquiry"}</p>
+
+        <br/>
+        <p>— Team Buildify</p>
+      `,
+    });
+
     res.status(200).json({ success: true });
   } catch (error) {
     console.error("Resend error:", error);

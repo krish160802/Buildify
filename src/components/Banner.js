@@ -158,7 +158,6 @@ const CheckboxGroup = styled.div`
   }
 `;
 
-/* ✅ New success message style */
 const SuccessMessage = styled.div`
   position: absolute;
   bottom: 2rem;
@@ -223,7 +222,7 @@ const Banner = () => {
   e.preventDefault();
 
   try {
-    const res = await fetch("http://localhost:5000/contact", {
+    const res = await fetch("https://buildify-backend-xjms.onrender.com/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
